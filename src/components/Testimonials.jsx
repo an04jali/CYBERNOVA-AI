@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Testimonials = () => {
 
   const testimonials = [
@@ -19,15 +21,18 @@ const Testimonials = () => {
   ]
 
   const renderCard = (testimonial, index) => (
-    <div key={`${testimonial.id}-${index}`} style={{
-      background: 'linear-gradient(to bottom, rgba(2,2,4,0.9), rgba(15,8,40,0.9))',
-      border: '1px solid rgba(0,198,255,0.12)',
-      borderRadius: 16, padding: '24px 20px',
-      marginBottom: 16,
-      backdropFilter: 'blur(10px)',
-      transition: 'border-color 0.3s',
-      cursor: 'default',
-    }}
+    <div
+      key={`${testimonial.id}-${index}`}
+      style={{
+        background: 'linear-gradient(to bottom, rgba(2,2,4,0.9), rgba(15,8,40,0.9))',
+        border: '1px solid rgba(0,198,255,0.12)',
+        borderRadius: 16,
+        padding: '24px 20px',
+        marginBottom: 16,
+        backdropFilter: 'blur(10px)',
+        transition: 'border-color 0.3s',
+        cursor: 'default',
+      }}
       onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,198,255,0.4)'}
       onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(0,198,255,0.12)'}
     >
@@ -44,7 +49,11 @@ const Testimonials = () => {
       </p>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <img src={testimonial.image} alt={testimonial.name} style={{ width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(0,198,255,0.25)', objectFit: 'cover', flexShrink: 0 }} />
+        <img
+          src={testimonial.image}
+          alt={testimonial.name}
+          style={{ width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(0,198,255,0.25)', objectFit: 'cover', flexShrink: 0 }}
+        />
         <div>
           <p style={{ fontSize: '0.85rem', color: 'rgba(220,235,255,0.9)', fontWeight: 600 }}>{testimonial.name}</p>
           <p style={{ fontSize: '0.75rem', color: 'rgba(0,198,255,0.6)' }}>{testimonial.company}</p>
@@ -74,47 +83,53 @@ const Testimonials = () => {
         }
       `}</style>
 
-      {/* 👇 marginTop pulls it up, zIndex keeps it above canvas */}
       <div style={{
         background: '#0a0e1a',
-        display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center',
-        padding: '0 24px 80px',
-        marginTop: '-60px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '80px 24px',
         position: 'relative',
         zIndex: 1,
       }}>
 
-        {/* Heading */}
         <div style={{ textAlign: 'center', marginBottom: 48 }}>
           <h2 style={{
             fontFamily: 'Syne, sans-serif',
             fontSize: 'clamp(2rem, 4vw, 3rem)',
-            fontWeight: 800, color: '#fff', marginBottom: 12,
+            fontWeight: 800,
+            color: '#fff',
+            marginBottom: 12,
           }}>
             People love us
           </h2>
           <p style={{
-            fontSize: '0.95rem', color: 'rgba(200,220,255,0.5)',
-            maxWidth: 480, margin: '0 auto', lineHeight: 1.6,
+            fontSize: '0.95rem',
+            color: 'rgba(200,220,255,0.5)',
+            maxWidth: 480,
+            margin: '0 auto',
+            lineHeight: 1.6,
           }}>
             Real stories from designers, developers, and product teams using
             CyberNova AI to ship faster and with confidence.
           </p>
         </div>
 
-        {/* Cards grid */}
         <div style={{
           position: 'relative',
-          width: '100%', maxWidth: 1100,
-          height: 600, overflow: 'hidden',
+          width: '100%',
+          maxWidth: 1100,
+          height: 600,
+          minHeight: 600,
+          overflow: 'hidden',
         }}>
           <div className="fade-top" />
           <div className="fade-bottom" />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, height: '100%' }}>
             {columns.map((col, colIndex) => (
-              <div key={colIndex} style={{ overflow: 'hidden' }}>
+              <div key={colIndex} style={{ overflow: 'hidden', height: '100%' }}>
                 <div className="scroll-col" style={{ animationDuration: col.duration }}>
                   {[
                     ...testimonials.slice(col.start, col.end),
@@ -125,6 +140,7 @@ const Testimonials = () => {
             ))}
           </div>
         </div>
+
       </div>
     </>
   )
