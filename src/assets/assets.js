@@ -5,7 +5,7 @@ import star_icon from "./star_icon.svg";
 import star_dull_icon from "./star_dull_icon.svg";
 import profile_img_1 from "./profile_img_1.png";
 import arrow_icon from "./arrow_icon.svg";
-import { SquarePen, Hash, Image, Eraser, Scissors, FileText } from 'lucide-react'
+import { SquarePen, Image, Eraser, FileText } from 'lucide-react'
 import ai_gen_img_1 from "./ai_gen_img_1.png";
 import ai_gen_img_2 from "./ai_gen_img_2.png";
 import ai_gen_img_3 from "./ai_gen_img_3.png";
@@ -29,13 +29,6 @@ export const AiToolsData = [
         path: '/ai/write-article'
     },
     {
-        title: 'Blog Title Generator',
-        description: 'Find the perfect, catchy title for your blog posts with our AI-powered generator.',
-        Icon: Hash,
-        bg: { from: '#B153EA', to: '#E549A3' },
-        path: '/ai/blog-titles'
-    },
-    {
         title: 'AI Image Generation',
         description: 'Create stunning visuals with our AI image generation tool, Experience the power of AI ',
         Icon: Image,
@@ -48,13 +41,6 @@ export const AiToolsData = [
         Icon: Eraser,
         bg: { from: '#F76C1C', to: '#F04A3C' },
         path: '/ai/remove-background'
-    },
-    {
-        title: 'Object Removal',
-        description: 'Remove unwanted objects from your images seamlessly with our AI object removal tool.',
-        Icon: Scissors,
-        bg: { from: '#5C6AF1', to: '#427DF5' },
-        path: '/ai/remove-object'
     },
     {
         title: 'Resume Reviewer',
@@ -91,28 +77,6 @@ export const dummyTestimonialData = [
 
 
 export const dummyCreationData = [
-    {
-        "id": 9,
-        "user_id": "user_2yMX02PRbyMtQK6PebpjnxvRNIA",
-        "prompt": "Generate a blog title for the keyword blog in the category Technology.",
-        "content": "Here are a few blog title options for a technology blog, playing with different angles:\n\n**General & Broad:**\n\n*   The Tech Blog: News, Reviews, and Insights\n*   Technology Today: Your Daily Dose of Tech\n*   The Future is Now: Exploring the World of Technology\n*   Tech Talk: Unpacking the Latest Innovations\n\n**More Specific & Intriguing:**\n\n*   Decoding Tech: Making Sense of the Digital World\n*   Beyond the Gadgets: The",
-        "type": "blog-title",
-        "publish": false,
-        "likes": [],
-        "created_at": "2025-07-01T11:09:50.492Z",
-        "updated_at": "2025-07-01T11:09:50.492Z"
-    },
-    {
-        "id": 8,
-        "user_id": "user_2yMX02PRbyMtQK6PebpjnxvRNIA",
-        "prompt": "Generate a blog title for the keyword blog in the category General.",
-        "content": "Here are a few blog title options for a blog about blogs in the General category, ranging from straightforward to a bit more creative:\n\n**Straightforward:**\n\n*   The Blog Blog: Everything You Need to Know About Blogging\n*   Blogging Insights: Tips, Tricks, and Trends\n*   Your Guide to the World of Blogging\n\n**More Creative:**\n\n*   Beyond the Post: Exploring the Art of Blogging\n*   Blogosphere Unlocked: Navigating the World of Online Writing",
-        "type": "blog-title",
-        "publish": false,
-        "likes": [],
-        "created_at": "2025-07-01T11:08:10.450Z",
-        "updated_at": "2025-07-01T11:08:10.450Z"
-    },
     {
         "id": 7,
         "user_id": "user_2yMX02PRbyMtQK6PebpjnxvRNIA",

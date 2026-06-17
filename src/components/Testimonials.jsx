@@ -1,23 +1,70 @@
 import React from 'react'
-
+import akhil from "../assets/Akhil.jpeg";
+import akarsh from "../assets/Akarsh.jpeg";
+import diksha from "../assets/Diksha.jpeg";
+import aanshi from "../assets/Aanshi.jpeg";
+import garima from "../assets/Garima.jpeg";
+import ranjans from "../assets/Ranjana.jpeg";
+import aditi from "../assets/Aditi.jpeg";
+import suraj from "../assets/Suraj.jpeg";
+import yashasvi from "../assets/Yashasvi.jpeg";
 const Testimonials = () => {
 
   const testimonials = [
-    { id: 1, description: "CyberNova AI helped us reduce build time drastically. The tools feel production ready and consistent across the product.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Alex Turner", company: "Vercel" },
-    { id: 2, description: "We shipped our MVP weeks earlier than planned. CyberNova AI removed a huge amount of repetitive work.", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Harry Peter", company: "Amazon" },
-    { id: 3, description: "CyberNova AI strikes the right balance between flexibility and consistency. It feels like a system built by real product teams.", image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60", name: "Jason Kim", company: "Flipkart" },
-    { id: 4, description: "The AI tools make scaling content incredibly easy. Highly recommended for any product team.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&h=100&auto=format&fit=crop", name: "Sofia Martinez", company: "Linear" },
-    { id: 5, description: "CyberNova AI allows me to focus on building features instead of fighting repetitive tasks. Everything looks premium right out of the box.", image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60", name: "Alex Johnson", company: "Microsoft" },
-    { id: 6, description: "If you're building fast, CyberNova AI is a must have. It dramatically speeds up development while keeping quality high.", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", name: "Emily Karter", company: "Stripe" },
-    { id: 7, description: "CyberNova AI strikes the right balance between power and ease of use. Feels like it was built by people who ship real products.", image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png", name: "Christofer Levin", company: "Deloitte" },
-    { id: 8, description: "The AI writing tools alone saved us weeks. Consistency and quality across every output is outstanding.", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", name: "Alex Turner", company: "Vercel" },
-    { id: 9, description: "We shipped our MVP weeks earlier than planned. CyberNova AI removed a huge amount of repetitive UI work.", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", name: "Harry Peter", company: "Amazon" }
-  ]
+  {
+    id: 1,
+    description: "CyberNova AI helped us reduce build time drastically. The tools feel production ready and consistent across the product.",
+    image: akhil,
+    name: "Akhil Shukla",
+  },
+  {
+    id: 2,
+    description: "We shipped our MVP weeks earlier than planned. CyberNova AI removed a huge amount of repetitive work.",
+    image: akarsh,
+    name: "Akarsh Goel",
+  },
+  {
+    id: 3,
+    description: "CyberNova AI strikes the right balance between flexibility and consistency. It feels like a system built by real product teams.",
+    image: diksha,
+    name: "Diksha Jaiswal",
+  },
+  {
+    id: 4,
+    description: "The AI tools make scaling content incredibly easy. Highly recommended for any product team.",
+    image: ranjans,
+    name: "Ranjana",
+  },
+  {
+    id: 5,
+    description: "CyberNova AI allows me to focus on building features instead of fighting repetitive tasks. Everything looks premium right out of the box.",
+    image: aanshi,
+    name: "Aanshi Gahlot",
+  },
+  {
+    id: 6,
+    description: "If you're building fast, CyberNova AI is a must-have. It dramatically speeds up development while keeping quality high.",
+    image: yashasvi,
+    name: "Yashasvi",
+  },
+  {
+    id: 7,
+    description: "CyberNova AI strikes the right balance between power and ease of use. Feels like it was built by people who ship real products.",
+    image: suraj,
+    name: "Suraj Singh",
+  },
+  {
+    id: 8,
+    description: "The AI writing tools alone saved us weeks. Consistency and quality across every output is outstanding.",
+    image: aditi,
+    name: "Aditi Gupta",
+  },
+];
 
   const columns = [
     { start: 0, end: 3, duration: '25s' },
     { start: 3, end: 6, duration: '30s' },
-    { start: 6, end: 9, duration: '20s' },
+    { start: 6, end: 8, duration: '20s' },
   ]
 
   const renderCard = (testimonial, index) => (
@@ -30,11 +77,17 @@ const Testimonials = () => {
         padding: '24px 20px',
         marginBottom: 16,
         backdropFilter: 'blur(10px)',
-        transition: 'border-color 0.3s',
+        transition: 'all 0.3s ease',
         cursor: 'default',
       }}
-      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,198,255,0.4)'}
-      onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(0,198,255,0.12)'}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'rgba(0,198,255,0.4)';
+        e.currentTarget.style.transform = 'translateY(-5px)';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'rgba(0,198,255,0.12)';
+        e.currentTarget.style.transform = 'translateY(0)';
+      }}
     >
       <div style={{ marginBottom: 16 }}>
         <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,11 +105,18 @@ const Testimonials = () => {
         <img
           src={testimonial.image}
           alt={testimonial.name}
-          style={{ width: 36, height: 36, borderRadius: '50%', border: '1px solid rgba(0,198,255,0.25)', objectFit: 'cover', flexShrink: 0 }}
+          style={{ width: 48, height: 48, borderRadius: '50%', border: '1px solid rgba(0,198,255,0.25)', objectFit: 'cover', flexShrink: 0 }}
         />
         <div>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(220,235,255,0.9)', fontWeight: 600 }}>{testimonial.name}</p>
-          <p style={{ fontSize: '0.75rem', color: 'rgba(0,198,255,0.6)' }}>{testimonial.company}</p>
+          <p
+            style={{
+              fontSize: '0.9rem',
+              color: 'rgba(220,235,255,0.95)',
+              fontWeight: 600
+            }}
+          >
+            {testimonial.name}
+          </p>
         </div>
       </div>
     </div>
@@ -102,7 +162,7 @@ const Testimonials = () => {
             color: '#fff',
             marginBottom: 12,
           }}>
-            People love us
+            What Our Beta Users Say
           </h2>
           <p style={{
             fontSize: '0.95rem',
@@ -111,8 +171,7 @@ const Testimonials = () => {
             margin: '0 auto',
             lineHeight: 1.6,
           }}>
-            Real stories from designers, developers, and product teams using
-            CyberNova AI to ship faster and with confidence.
+           Feedback from early users who explored CyberNova AI and shared their experience.
           </p>
         </div>
 

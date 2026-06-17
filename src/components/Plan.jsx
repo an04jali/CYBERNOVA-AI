@@ -173,8 +173,8 @@ const Plan = () => {
 
             {[
               'AI Article Writer',
-              'Blog Generator',
               'Resume Review',
+              'Background Removal',
               'Limited Usage'
             ].map((item, i) => (
 
@@ -300,9 +300,7 @@ const Plan = () => {
 
             {[
               'Unlimited AI Usage',
-              'ATS Resume Scorer',
-              'AI Mock Interview',
-              'Priority Generation',
+              'Image Generation',
             ].map((item, i) => (
 
               <li

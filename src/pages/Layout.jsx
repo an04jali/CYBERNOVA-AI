@@ -43,7 +43,7 @@ const Layout = () => {
       {/* Body */}
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
         <Sidebar sidebar={sidebar} setSidebar={setSidebar} />
-        <div style={{ flex: 1, padding: 24, overflowY: 'auto', background: '#0a0e1a' }}>
+        <div style={{ flex: 1, padding: 24, overflowY: 'hidden', background: '#0a0e1a' }}>
           <Outlet />
         </div>
       </div>

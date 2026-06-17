@@ -1,7 +1,51 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logoo.png'
+import {
+  FaLinkedinIn,
+  FaGithub,
+} from "react-icons/fa6";
 
 const Footer = () => {
+
+  const socialLinks = [
+    {
+      icon: <FaGithub size={16} />,
+      label: "GitHub",
+      link: "https://github.com/an04jali"
+    },
+    {
+      icon: <FaLinkedinIn size={16} />,
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/aarti-singh-355b7b1a3/"
+    }
+  ];
+
+  // Map each Product label to its actual route.
+  // These are relative paths (no protocol/host) — React Router resolves
+  // them against your current origin automatically.
+  const productLinks = [
+    { label: 'AI Article Writer', path: '/ai/write-article' },
+    { label: 'Background Removal', path: '/ai/remove-background' },
+    { label: 'Image Generator', path: '/ai/generate-images' },
+    { label: 'Resume Reviewer', path: '/ai/review-resume' },
+    { label: 'History Saver', path: '/ai' },
+  ];
+
+  const companyLinks = [
+    { label: 'About Us', path: '/about' },
+    { label: 'Careers', path: '/careers' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'Press Kit', path: '/press-kit' },
+    { label: 'Contact Us', path: '/contact' },
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Terms of Service', path: '/terms-of-service' },
+    { label: 'Cookie Policy', path: '/cookie-policy' },
+  ];
+
   return (
     <footer style={{
       background: '#0a0e1a',
@@ -38,13 +82,8 @@ const Footer = () => {
           </p>
           {/* Social icons */}
           <div style={{ display: 'flex', gap: 12, marginTop: 20 }}>
-            {[
-              { icon: '𝕏', label: 'Twitter' },
-              { icon: 'in', label: 'LinkedIn' },
-              { icon: 'f', label: 'Facebook' },
-              { icon: '▶', label: 'YouTube' },
-            ].map((s, i) => (
-              <a key={i} href="#" title={s.label} style={{
+            {socialLinks.map((s, i) => (
+              <a key={i} href={s.link} target="_blank" rel="noopener noreferrer" title={s.label} style={{
                 width: 36, height: 36, borderRadius: '50%',
                 background: 'rgba(0,198,255,0.07)',
                 border: '1px solid rgba(0,198,255,0.18)',
@@ -76,15 +115,15 @@ const Footer = () => {
             marginBottom: 20, letterSpacing: '0.5px',
           }}>Product</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {['AI Article Writer', 'Image Generator', 'Resume Scorer', 'Mock Interview', 'Job Assistant', 'History Saver'].map((item, i) => (
-              <a key={i} href="#" style={{
+            {productLinks.map((item, i) => (
+              <Link key={i} to={item.path} style={{
                 color: 'rgba(200,220,255,0.45)',
                 fontSize: '0.85rem', textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
                 onMouseEnter={e => e.currentTarget.style.color = '#00C6FF'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,220,255,0.45)'}
-              >{item}</a>
+              >{item.label}</Link>
             ))}
           </div>
         </div>
@@ -96,15 +135,15 @@ const Footer = () => {
             marginBottom: 20, letterSpacing: '0.5px',
           }}>Company</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {['About Us', 'Careers', 'Blog', 'Press Kit', 'Contact Us'].map((item, i) => (
-              <a key={i} href="#" style={{
+            {companyLinks.map((item, i) => (
+              <Link key={i} to={item.path} style={{
                 color: 'rgba(200,220,255,0.45)',
                 fontSize: '0.85rem', textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
                 onMouseEnter={e => e.currentTarget.style.color = '#00C6FF'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,220,255,0.45)'}
-              >{item}</a>
+              >{item.label}</Link>
             ))}
           </div>
         </div>
@@ -180,15 +219,15 @@ const Footer = () => {
           © 2026 CyberNova AI. All rights reserved.
         </p>
         <div style={{ display: 'flex', gap: 24 }}>
-          {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item, i) => (
-            <a key={i} href="#" style={{
+          {legalLinks.map((item, i) => (
+            <Link key={i} to={item.path} style={{
               color: 'rgba(200,220,255,0.25)',
               fontSize: '0.78rem', textDecoration: 'none',
               transition: 'color 0.2s',
             }}
               onMouseEnter={e => e.currentTarget.style.color = '#00C6FF'}
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,220,255,0.25)'}
-            >{item}</a>
+            >{item.label}</Link>
           ))}
         </div>
       </div>

@@ -36,13 +36,7 @@ export const creatorTools = [
     path: "/ai/write-article",
     color: "from-cyan-500 to-blue-600",
   },
-  {
-    title: "Blog Title Generator",
-    description: "Generate catchy SEO-friendly blog titles.",
-    icon: FileText,
-    path: "/ai/blog-titles",
-    color: "from-pink-500 to-purple-500",
-  },
+  
   {
     title: "AI Image Generation",
     description: "Create stunning visuals with AI.",
@@ -57,13 +51,7 @@ export const creatorTools = [
     path: "/ai/remove-background",
     color: "from-orange-500 to-red-500",
   },
-  {
-    title: "Object Removal",
-    description: "Remove unwanted objects from images.",
-    icon: Scissors,
-    path: "/ai/remove-object",
-    color: "from-indigo-500 to-blue-500",
-  },
+  
 ]
 
 export const careerTools = [

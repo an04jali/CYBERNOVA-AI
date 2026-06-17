@@ -7,13 +7,11 @@ import {
 } from 'lucide-react'
 
 const navItems = [
-  { icon: LayoutDashboard, label: 'Dashboard',          path: '/ai' },
-  { icon: PenLine,         label: 'Write Article',       path: '/ai/write-article' },
-  { icon: Hash,            label: 'Blog Titles',         path: '/ai/blog-titles' },
-  { icon: Image,           label: 'Generate Images',     path: '/ai/generate-images' },
-  { icon: ImageOff,        label: 'Remove Background',   path: '/ai/remove-background' },
-  { icon: Eraser,          label: 'Remove Object',       path: '/ai/remove-object' },
-  { icon: FileText,        label: 'Review Resume',       path: '/ai/review-resume' },
+  { icon: LayoutDashboard, label: 'Dashboard',        path: '/ai' },
+  { icon: PenLine,         label: 'Write Article',     path: '/ai/write-article' },
+  { icon: Image,           label: 'Generate Images',   path: '/ai/generate-images' },
+  { icon: ImageOff,        label: 'Remove Background', path: '/ai/remove-background' },
+  { icon: FileText,        label: 'Review Resume',     path: '/ai/review-resume' },
 ]
 
 const Sidebar = ({ sidebar, setSidebar }) => {
@@ -29,8 +27,8 @@ const Sidebar = ({ sidebar, setSidebar }) => {
           width: 240px;
           flex-shrink: 0;
           height: 100%;
-          background: rgba(255,255,255,0.02);
-          border-right: 1px solid rgba(0,198,255,0.1);
+          background: #0d1117;
+          border-right: 1px solid rgba(0,198,255,0.15);
           display: flex;
           flex-direction: column;
           justify-content: space-between;

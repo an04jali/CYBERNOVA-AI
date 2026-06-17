@@ -142,7 +142,7 @@ const Hero = () => {
     else if (lower.includes('interview') || lower.includes('mock'))
       reply = "🎤 Our AI Mock Interview feature simulates real interview scenarios and gives you feedback. Ready to practice?"
     else if (lower.includes('resume') || lower.includes('ats') || lower.includes('cv'))
-      reply = "📄 Our ATS Resume Scorer analyzes your resume and gives you a detailed score with improvement tips!"
+      reply = "📄 Our Resume Reviewer analyzes your resume and gives you detailed feedback with improvement tips!"
     else if (lower.includes('job') || lower.includes('cover letter') || lower.includes('apply'))
       reply = "💼 Our Job Application Assistant auto-generates cover letters, tailored resumes, and emails for each job!"
     else if (lower.includes('history') || lower.includes('saved') || lower.includes('past'))
@@ -155,12 +155,9 @@ const Hero = () => {
     setTyping(false)
   }
 
-  // Extra cards without paths (no navigation)
+  // Extra cards (clickable, navigate to dashboard/relevant page)
   const extraFeatures = [
-    { icon: '🕘', title: 'History Saver', desc: 'Every AI generation is saved automatically. Revisit, reuse, and build on your past work anytime.' },
-    { icon: '🎤', title: 'AI Mock Interview', desc: 'Practice with AI-powered mock interviews. Get real-time feedback and ace your next interview.' },
-    { icon: '📄', title: 'ATS Resume Scorer', desc: 'Upload your resume and get an instant ATS score with actionable tips to beat applicant filters.' },
-    { icon: '💼', title: 'Job Application Assistant', desc: 'AI auto-generates tailored cover letters, emails, and resumes for every job you apply to.' },
+    { icon: '🕘', title: 'History Saver', desc: 'Every AI generation is saved automatically. Revisit, reuse, and build on your past work anytime.', path: '/ai' },
   ]
 
   const brands = [
@@ -363,19 +360,25 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* ── Extra Feature Cards (no path yet) ── */}
+        {/* ── Extra Feature Cards (clickable, navigate to dashboard) ── */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20, marginBottom: 40 }}>
           {extraFeatures.map((f, i) => (
-            <div key={i} className="extra-card" style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(0,198,255,0.15)',
-              borderRadius: 20, padding: '28px 24px',
-              backdropFilter: 'blur(10px)',
-            }}>
+            <div
+              key={i}
+              className="extra-card"
+              onClick={() => f.path && handleCardClick(f.path)}
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(0,198,255,0.15)',
+                borderRadius: 20, padding: '28px 24px',
+                backdropFilter: 'blur(10px)',
+                cursor: f.path ? 'pointer' : 'default',
+              }}
+            >
               <div style={{ width: 44, height: 44, borderRadius: 12, background: 'linear-gradient(135deg, rgba(0,198,255,0.15), rgba(0,114,255,0.25))', border: '1px solid rgba(0,198,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', marginBottom: 16 }}>{f.icon}</div>
               <div style={{ fontFamily: 'Syne, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#fff', marginBottom: 8 }}>{f.title}</div>
               <div style={{ fontSize: '0.83rem', color: 'rgba(200,220,255,0.5)', lineHeight: 1.6, marginBottom: 16 }}>{f.desc}</div>
-              <div style={{ fontSize: '0.78rem', color: 'rgba(0,198,255,0.5)', fontWeight: 600 }}>Coming soon →</div>
+              <div style={{ fontSize: '0.78rem', color: 'rgba(0,198,255,0.5)', fontWeight: 600 }}>Try now →</div>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ import React from "react"
 
 const DashboardPreview = () => {
   return (
-    <div className="px-4 sm:px-10 xl:px-24 py-24">
+    <div className="px-4 sm:px-10 xl:px-24 py-24 overflow-hidden">
 
       <div className="
         rounded-[32px]
