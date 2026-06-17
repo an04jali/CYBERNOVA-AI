@@ -1,16 +1,134 @@
-# React + Vite
+# 🚀 CyberNova AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CyberNova AI is a full-stack Generative AI SaaS platform that combines multiple AI-powered productivity tools into a single modern application. Users can generate content, create images, review resumes, remove image backgrounds, and manage their AI-generated creations through a secure and intuitive dashboard.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 📝 AI Article Writer
 
-## React Compiler
+Generate high-quality articles, blogs, and content using Generative AI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎨 AI Image Generator
 
-## Expanding the ESLint configuration
+Create stunning AI-generated images from text prompts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🖼️ Background Removal
+
+Remove image backgrounds instantly with AI-powered image processing.
+
+### 📄 Resume Reviewer
+
+Analyze resumes and receive AI-generated feedback and improvement suggestions.
+
+### 🔐 Secure Authentication
+
+User authentication and session management powered by Clerk.
+
+### 📊 User Dashboard
+
+Track and manage all AI-generated creations in one place.
+
+### ⚡ Modern UI/UX
+
+Responsive and visually appealing interface built with React.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* React Router
+* Clerk Authentication
+* CSS / Modern UI Components
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB
+* Mongoose
+
+### AI Services
+
+* Generative AI APIs
+* Hugging Face APIs
+* Image Processing APIs
+
+---
+
+## 📂 Project Structure
+
+```bash
+CyberNova-AI/
+│
+├── client/
+│   ├── src/
+│   ├── assets/
+│   ├── components/
+│   └── pages/
+│
+├── server/
+│   ├── routes/
+│   ├── models/
+│   └── controllers/
+│
+└── README.md
+```
+
+## 🚀 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/CYBERNOVA-AI.git
+cd CYBERNOVA-AI
+```
+
+### Install Frontend Dependencies
+
+```bash
+cd client
+npm install
+```
+
+### Install Backend Dependencies
+
+```bash
+cd ../server
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the server directory:
+
+```env
+MONGODB_URI=your_mongodb_connection
+CLERK_SECRET_KEY=your_clerk_secret
+HF_TOKEN=your_huggingface_token
+```
+
+Create a `.env` file in the client directory:
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
+```
+
+### Run Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+### Run Backend
+
+```bash
+cd server
+npm start
+```
