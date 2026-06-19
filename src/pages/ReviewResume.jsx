@@ -31,7 +31,7 @@ const ReviewResume = () => {
       formData.append("resume", file);
 
       const { data } = await axios.post(
-        "https://cybernova-ai-backend.onrender.com/api/resume",
+        "https://cybernova-ai-backend.onrender.com/api/resume/review",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

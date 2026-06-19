@@ -30,7 +30,7 @@ export default function GenerateImages() {
 
     try {
       const response = await fetch(
-        "https://cybernova-ai-backend.onrender.com/api/images",
+        "https://cybernova-ai-backend.onrender.com/api/images/generate",
         {
           method: "POST",
           headers: {
