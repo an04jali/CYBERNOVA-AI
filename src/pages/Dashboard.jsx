@@ -13,7 +13,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:5000/creations')
+    fetch(`${import.meta.env.VITE_API_URL}/creations`)
       .then((res) => res.json())
       .then((data) => {
         setCreations(data)

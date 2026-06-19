@@ -24,7 +24,7 @@ const RemoveBackground = () => {
 
   const saveToHistory = (base64) => {
     axios
-      .post("http://localhost:5000/api/images/save-history", {
+      .post("https://cybernova-ai-backend.onrender.com/api/images", {
         type: "Background Removal",
         prompt: "Background removed",
         result: base64,

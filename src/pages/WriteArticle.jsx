@@ -17,7 +17,7 @@ export default function WriteArticle() {
     if (!topic.trim()) { setError("Please enter a topic first."); return; }
     setError(""); setLoading(true); setArticle(""); setMinimized(false);
     try {
-      const res = await fetch("http://localhost:5000/generate-article", {
+      const res = await fetch("https://cybernova-ai-backend.onrender.com/generate-article", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: topic }),
