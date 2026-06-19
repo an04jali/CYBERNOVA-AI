@@ -38,9 +38,9 @@ export default function GenerateImages() {
           },
           body: JSON.stringify({
             prompt: `${selectedStyle}, ${input}`,
-            width: 1024,
-            height: 1024,
-            steps: 28,
+            width: 512,
+            height: 512,
+            steps: 4,
           }),
         }
       );
@@ -58,6 +58,15 @@ export default function GenerateImages() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = imageUrl;
+    link.download = "cybernova-image.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const onSubmitHandler = async (e) => {
@@ -87,21 +96,11 @@ export default function GenerateImages() {
           color: "#fff",
         }}
       >
-        <h2
-          style={{
-            marginBottom: "20px",
-            fontSize: "28px",
-          }}
-        >
+        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>
           🎨 AI Image Generator
         </h2>
 
-        <p
-          style={{
-            color: "#94a3b8",
-            marginBottom: "10px",
-          }}
-        >
+        <p style={{ color: "#94a3b8", marginBottom: "10px" }}>
           Describe Your Image
         </p>
 
@@ -122,23 +121,11 @@ export default function GenerateImages() {
           }}
         />
 
-        <p
-          style={{
-            color: "#94a3b8",
-            marginTop: "20px",
-            marginBottom: "10px",
-          }}
-        >
+        <p style={{ color: "#94a3b8", marginTop: "20px", marginBottom: "10px" }}>
           Style
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "8px",
-          }}
-        >
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {imageStyles.map((style) => (
             <button
               type="button"
@@ -153,13 +140,8 @@ export default function GenerateImages() {
                     ? "1px solid #7c3aed"
                     : "1px solid #1e3a4a",
                 background:
-                  selectedStyle === style
-                    ? "#2e1065"
-                    : "transparent",
-                color:
-                  selectedStyle === style
-                    ? "#c4b5fd"
-                    : "#94a3b8",
+                  selectedStyle === style ? "#2e1065" : "transparent",
+                color: selectedStyle === style ? "#c4b5fd" : "#94a3b8",
               }}
             >
               {style}
@@ -179,8 +161,7 @@ export default function GenerateImages() {
             fontSize: "16px",
             fontWeight: "bold",
             cursor: loading ? "not-allowed" : "pointer",
-            background:
-              "linear-gradient(135deg,#00AD25,#04FF50)",
+            background: "linear-gradient(135deg,#00AD25,#04FF50)",
             color: "#000",
           }}
         >
@@ -201,12 +182,7 @@ export default function GenerateImages() {
           minHeight: "550px",
         }}
       >
-        <h2
-          style={{
-            marginBottom: "20px",
-            fontSize: "28px",
-          }}
-        >
+        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>
           🖼️ Generated Image
         </h2>
 
@@ -218,33 +194,15 @@ export default function GenerateImages() {
               color: "#64748b",
             }}
           >
-            <div
-              style={{
-                fontSize: "64px",
-                marginBottom: "16px",
-              }}
-            >
-              🖼️
-            </div>
-
+            <div style={{ fontSize: "64px", marginBottom: "16px" }}>🖼️</div>
             Enter a prompt and click Generate Image
           </div>
         )}
 
         {loading && (
-          <div
-            style={{
-              textAlign: "center",
-              marginTop: "120px",
-            }}
-          >
+          <div style={{ textAlign: "center", marginTop: "120px" }}>
             <h3>Generating image...</h3>
-
-            <p
-              style={{
-                color: "#94a3b8",
-              }}
-            >
+            <p style={{ color: "#94a3b8" }}>
               FLUX AI may take 10–30 seconds.
             </p>
           </div>
@@ -269,22 +227,27 @@ export default function GenerateImages() {
               alt="Generated"
               style={{
                 width: "100%",
+                maxHeight: "500px",
+                objectFit: "contain",
                 borderRadius: "12px",
               }}
             />
-
-            <a
-              href={imageUrl}
-              download="cybernova-image.png"
+            <button
+              onClick={handleDownload}
               style={{
                 display: "inline-block",
                 marginTop: "16px",
+                background: "transparent",
+                border: "1px solid #00ff55",
+                borderRadius: "8px",
+                padding: "8px 16px",
                 color: "#00ff55",
-                textDecoration: "none",
+                cursor: "pointer",
+                fontSize: "16px",
               }}
             >
               ⬇ Download Image
-            </a>
+            </button>
           </div>
         )}
       </div>
