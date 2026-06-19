@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
-import Community from './pages/Community'
+
 import Layout from './pages/Layout'
 import WriteArticle from './pages/WriteArticle'
 import GenerateImages from './pages/GenerateImages'
@@ -25,7 +25,7 @@ const App = () => {
         <Route path="interview" element={<Interview />} />
       </Route>
 
-      <Route path="/community" element={<Community />} />
+    
       <Route path="*" element={<h1>404 Not Found</h1>} />
     </Routes>
   )
