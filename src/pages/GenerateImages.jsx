@@ -23,7 +23,6 @@ export default function GenerateImages() {
       setError("Please enter a prompt.");
       return;
     }
-
     setLoading(true);
     setError("");
     setImageUrl("");
@@ -33,9 +32,7 @@ export default function GenerateImages() {
         "https://cybernova-ai-backend.onrender.com/api/images/generate",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             prompt: `${selectedStyle}, ${input}`,
             width: 512,
@@ -46,11 +43,7 @@ export default function GenerateImages() {
       );
 
       const data = await response.json();
-
-      if (!data.success) {
-        throw new Error(data.message || "Image generation failed");
-      }
-
+      if (!data.success) throw new Error(data.message || "Image generation failed");
       setImageUrl(`data:image/png;base64,${data.image}`);
     } catch (err) {
       console.error(err);
@@ -69,26 +62,14 @@ export default function GenerateImages() {
     document.body.removeChild(link);
   };
 
-  const onSubmitHandler = async (e) => {
-    e.preventDefault();
-    await generateImage();
-  };
-
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "24px",
-        padding: "24px",
-      }}
-    >
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", padding: "24px" }}>
       {/* Left Panel */}
       <form
-        onSubmit={onSubmitHandler}
+        onSubmit={(e) => { e.preventDefault(); generateImage(); }}
         style={{
           flex: 1,
-          minWidth: "400px",
+          minWidth: "300px",
           background: "#0f1923",
           border: "1px solid #1e3a4a",
           borderRadius: "16px",
@@ -96,14 +77,9 @@ export default function GenerateImages() {
           color: "#fff",
         }}
       >
-        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>
-          🎨 AI Image Generator
-        </h2>
+        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>🎨 AI Image Generator</h2>
 
-        <p style={{ color: "#94a3b8", marginBottom: "10px" }}>
-          Describe Your Image
-        </p>
-
+        <p style={{ color: "#94a3b8", marginBottom: "10px" }}>Describe Your Image</p>
         <textarea
           rows="5"
           value={input}
@@ -121,10 +97,7 @@ export default function GenerateImages() {
           }}
         />
 
-        <p style={{ color: "#94a3b8", marginTop: "20px", marginBottom: "10px" }}>
-          Style
-        </p>
-
+        <p style={{ color: "#94a3b8", marginTop: "20px", marginBottom: "10px" }}>Style</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {imageStyles.map((style) => (
             <button
@@ -135,12 +108,8 @@ export default function GenerateImages() {
                 padding: "8px 14px",
                 borderRadius: "999px",
                 cursor: "pointer",
-                border:
-                  selectedStyle === style
-                    ? "1px solid #7c3aed"
-                    : "1px solid #1e3a4a",
-                background:
-                  selectedStyle === style ? "#2e1065" : "transparent",
+                border: selectedStyle === style ? "1px solid #7c3aed" : "1px solid #1e3a4a",
+                background: selectedStyle === style ? "#2e1065" : "transparent",
                 color: selectedStyle === style ? "#c4b5fd" : "#94a3b8",
               }}
             >
@@ -173,27 +142,19 @@ export default function GenerateImages() {
       <div
         style={{
           flex: 1,
-          minWidth: "400px",
+          minWidth: "300px",
           background: "#0f1923",
           border: "1px solid #1e3a4a",
           borderRadius: "16px",
           padding: "24px",
           color: "#fff",
-          minHeight: "550px",
+          minHeight: "500px",
         }}
       >
-        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>
-          🖼️ Generated Image
-        </h2>
+        <h2 style={{ marginBottom: "20px", fontSize: "28px" }}>🖼️ Generated Image</h2>
 
         {!imageUrl && !loading && !error && (
-          <div
-            style={{
-              textAlign: "center",
-              marginTop: "120px",
-              color: "#64748b",
-            }}
-          >
+          <div style={{ textAlign: "center", marginTop: "120px", color: "#64748b" }}>
             <div style={{ fontSize: "64px", marginBottom: "16px" }}>🖼️</div>
             Enter a prompt and click Generate Image
           </div>
@@ -202,20 +163,12 @@ export default function GenerateImages() {
         {loading && (
           <div style={{ textAlign: "center", marginTop: "120px" }}>
             <h3>Generating image...</h3>
-            <p style={{ color: "#94a3b8" }}>
-              FLUX AI may take 10–30 seconds.
-            </p>
+            <p style={{ color: "#94a3b8" }}>FLUX AI may take 10–30 seconds.</p>
           </div>
         )}
 
         {error && (
-          <div
-            style={{
-              color: "#ef4444",
-              textAlign: "center",
-              marginTop: "120px",
-            }}
-          >
+          <div style={{ color: "#ef4444", textAlign: "center", marginTop: "120px" }}>
             {error}
           </div>
         )}
@@ -227,7 +180,7 @@ export default function GenerateImages() {
               alt="Generated"
               style={{
                 width: "100%",
-                maxHeight: "500px",
+                maxHeight: "350px",
                 objectFit: "contain",
                 borderRadius: "12px",
               }}
