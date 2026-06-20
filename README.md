@@ -120,3 +120,9 @@ VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
 ```
 
 <img width="1900" height="899" alt="image" src="https://github.com/user-attachments/assets/dde389b4-5494-4e05-bd97-91be2eaa40f8" />
+<img width="1493" height="735" alt="image" src="https://github.com/user-attachments/assets/e6957483-4d7a-4b2d-bb74-6bc5c9731b5c" />
+<img width="1896" height="905" alt="image" src="https://github.com/user-attachments/assets/d5b29f76-826e-4818-9158-f4445405bd8f" />
+<img width="1911" height="903" alt="image" src="https://github.com/user-attachments/assets/da1a27cc-da6b-417a-b191-040794489fd5" />
+
+
+
