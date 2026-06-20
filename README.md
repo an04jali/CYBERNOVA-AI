@@ -1,5 +1,5 @@
 # 🚀 CyberNova AI
-
+live link: https://cybernova-ai-tysk.vercel.app/
 CyberNova AI is a full-stack Generative AI SaaS platform that combines multiple AI-powered productivity tools into a single modern application. Users can generate content, create images, review resumes, remove image backgrounds, and manage their AI-generated creations through a secure and intuitive dashboard.
 
 ## ✨ Features
@@ -119,16 +119,4 @@ Create a `.env` file in the client directory:
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
 ```
 
-### Run Frontend
-
-```bash
-cd client
-npm run dev
-```
-
-### Run Backend
-
-```bash
-cd server
-npm start
-```
+<img width="1900" height="899" alt="image" src="https://github.com/user-attachments/assets/dde389b4-5494-4e05-bd97-91be2eaa40f8" />
